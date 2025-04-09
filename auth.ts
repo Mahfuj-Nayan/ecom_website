@@ -82,6 +82,11 @@ export const config = {
       }
       return token;
     },
+    //------------------------
+    authorized({ auth }) {
+      return !!auth?.user;
+    },
+    //---------------------
   },
 } satisfies NextAuthConfig;
 
