@@ -50,3 +50,20 @@ export function round2decimal(value: number | string) {
     throw new Error("Value is not a number or string");
   }
 }
+
+const CURRENCY_FORMATER = new Intl.NumberFormat("en-US", {
+  currency: "USD",
+  style: "currency",
+  minimumFractionDigits: 2,
+});
+
+// Formate currency using the CURRENCY_FORMATER above
+export function formatCurrency(amount: number | string | null) {
+  if (typeof amount === "number") {
+    return CURRENCY_FORMATER.format(amount);
+  } else if (typeof amount === "string") {
+    return CURRENCY_FORMATER.format(Number(amount));
+  } else {
+    return "NaN";
+  }
+}
