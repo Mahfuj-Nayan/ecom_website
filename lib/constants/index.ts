@@ -23,10 +23,10 @@ export const signUpDefaultValues = {
 };
 
 export const shippingAddressDefaultValues = {
-  fullName: "MI Nayan",
-  streetAddress: "218/3 Laxmipura",
-  city: "Gazipur",
-  postalCode: "1700",
-  country: "Bangladesh",
-  phoneNumber: "+8801957428336",
+  fullName: "",
+  streetAddress: "",
+  city: "",
+  postalCode: "",
+  country: "",
+  phoneNumber: "",
 };
