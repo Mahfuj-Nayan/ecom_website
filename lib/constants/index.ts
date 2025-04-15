@@ -22,11 +22,11 @@ export const signUpDefaultValues = {
   confirmPassword: "",
 };
 
-export const shippingAddressDefaultValues = {
-  fullName: "",
-  streetAddress: "",
-  city: "",
-  postalCode: "",
-  country: "",
-  phoneNumber: "",
-};
+// export const shippingAddressDefaultValues = {
+//   fullName: "",
+//   streetAddress: "",
+//   city: "",
+//   postalCode: "",
+//   country: "",
+//   phoneNumber: "",
+// };
