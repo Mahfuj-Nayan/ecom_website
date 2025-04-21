@@ -113,11 +113,6 @@ const PlaceOrderPage = async () => {
                   ))}
                 </TableBody>
               </Table>
-              <div className="mt-3">
-                <Link href="/payment-method">
-                  <Button variant="outline">Edit</Button>
-                </Link>
-              </div>
             </CardContent>
           </Card>
         </div>
