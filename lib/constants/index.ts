@@ -31,7 +31,7 @@ export const shippingAddressDefaultValues = {
   phoneNumber: "",
 };
 
-export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 5;
+export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 10;
 
 export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
   ? process.env.PAYMENT_METHODS.split(",")
