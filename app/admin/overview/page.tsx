@@ -81,8 +81,8 @@ const AdminOverviewPage = async () => {
           </CardContent>
         </Card>
       </div>
-      <div className="grid gap-4 mt-4 md:grid-cols-2 lg:grid-cols-7">
-        <Card className="col-span-4">
+      <div className="grid gap-4 mt-4 lg:grid-cols-7">
+        <Card className="lg:col-span-4">
           <CardHeader>
             <CardTitle>Overview</CardTitle>
             <CardContent>
@@ -90,7 +90,7 @@ const AdminOverviewPage = async () => {
             </CardContent>
           </CardHeader>
         </Card>
-        <Card className="col-span-4 lg:col-span-3">
+        <Card className="lg:col-span-3">
           <CardHeader>
             <CardTitle>Recent Sales</CardTitle>
             <CardContent>
@@ -99,7 +99,7 @@ const AdminOverviewPage = async () => {
                   <TableRow>
                     <TableHead>BUYER</TableHead>
                     <TableHead>DATE</TableHead>
-                    <TableHead>TATAL</TableHead>
+                    <TableHead>TOTAL</TableHead>
                     <TableHead>ACTIONS</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -114,8 +114,8 @@ const AdminOverviewPage = async () => {
                       </TableCell>
                       <TableCell>{formatCurrency(order.totalPrice)}</TableCell>
                       <TableCell>
-                        <Link href={`/order/${order.id}`}>
-                          <span className="px-2">Details</span>
+                        <Link href={`/order/${order.id}`} className="px-2">
+                          Details
                         </Link>
                       </TableCell>
                     </TableRow>
