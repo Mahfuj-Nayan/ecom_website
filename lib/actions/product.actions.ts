@@ -31,10 +31,10 @@ export async function getProductById(productId: string) {
 
 // Get all products
 export async function getAllProducts({
-  query,
+  // query,
+  // category,
   limit = PAGE_SIZE,
   page,
-  category,
 }: {
   query: string;
   limit?: number;
