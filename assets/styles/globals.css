@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "uploadthing/tw/v4";
+
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -164,4 +166,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+html.dark .upload-field .text-white {
+  color: #ffffff !important;
+}
+.upload-field .text-white {
+  color: #000000 !important;
 }

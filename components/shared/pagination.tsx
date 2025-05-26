@@ -28,7 +28,7 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
   return (
     <div className="flex gap-2 pt-4">
       <Button
-        size="lg"
+        size="default"
         variant="outline"
         className="w-28"
         disabled={Number(page) <= 1}
@@ -38,7 +38,7 @@ const Pagination = ({ page, totalPages, urlParamName }: PaginationProps) => {
       </Button>
 
       <Button
-        size="lg"
+        size="default"
         variant="outline"
         className="w-28 ml-auto"
         disabled={Number(page) >= totalPages}

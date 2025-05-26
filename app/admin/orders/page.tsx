@@ -37,7 +37,7 @@ const AdminOrdersPage = async (props: {
     page: Number(page),
   });
   return (
-    <div className="space-y-2">
+    <div className="space-y-6">
       <h2 className="h2-bold">Orders</h2>
       <div className="overflow-x-auto">
         <Table>
@@ -53,29 +53,24 @@ const AdminOrdersPage = async (props: {
           </TableHeader>
           <TableBody>
             {orders.data.map((order) => (
-              <TableRow
-                key={order.id}
-                className="border-b border-gray-200 last:border-b-0"
-              >
-                <TableCell className="py-4">{formatId(order.id)}</TableCell>
-                <TableCell className="py-4">
+              <TableRow key={order.id} className="border-b last:border-b-0">
+                <TableCell>{formatId(order.id)}</TableCell>
+                <TableCell>
                   {formatDateTime(order.createdAt).dateTime}
                 </TableCell>
-                <TableCell className="py-4">
-                  {formatCurrency(order.totalPrice)}
-                </TableCell>
-                <TableCell className="py-4">
+                <TableCell>{formatCurrency(order.totalPrice)}</TableCell>
+                <TableCell>
                   {order.isPaid && order.paidAt
                     ? formatDateTime(order.paidAt).dateTime
                     : "Not Paid"}
                 </TableCell>
-                <TableCell className="py-4">
+                <TableCell>
                   {order.isDelivered && order.deliveredAt
                     ? formatDateTime(order.deliveredAt).dateTime
                     : "Not Delivered"}
                 </TableCell>
-                <TableCell className="py-4">
-                  <Button asChild variant="outline" size="sm">
+                <TableCell className="flex gap-1">
+                  <Button asChild variant="outline" size="xs">
                     <Link href={`/order/${order.id}`}>Details</Link>
                   </Button>
                   <DeleteDialog id={order.id} action={deleteOrder} />
