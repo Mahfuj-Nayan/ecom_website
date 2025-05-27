@@ -213,7 +213,7 @@ export async function deleteUser(userId: string) {
   }
 }
 
-// Update a user
+// Update a user (admin action)
 export async function updateUser(user: z.infer<typeof updateUserSchema>) {
   try {
     await prisma.user.update({

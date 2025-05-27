@@ -7,12 +7,12 @@ import UpdateUserForm from "./update-user-form";
 export const metadata: Metadata = { title: "Update User" };
 
 const AdminUsersUpdatePage = async (props: {
-  params: Promise<{ userId: string }>;
+  params: Promise<{ id: string }>;
 }) => {
   await requireAdmin(); // Only admin can access
 
-  const { userId } = await props.params;
-  const user = await getUserById(userId);
+  const { id } = await props.params;
+  const user = await getUserById(id);
   if (!user) notFound();
 
   return (
