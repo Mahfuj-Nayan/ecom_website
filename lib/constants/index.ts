@@ -46,10 +46,14 @@ export const productDefaultValues = {
   banner: null,
 };
 
+export const USER_ROLES = process.env.USER_ROLES
+  ? process.env.USER_ROLES.split(", ")
+  : ["user", "admin"];
+
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 12;
 
 export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
-  ? process.env.PAYMENT_METHODS.split(",")
+  ? process.env.PAYMENT_METHODS.split(", ")
   : ["PayPal", "Stripe", "CashOnDelivery"];
 export const DEFAULT_PAYMENT_METHOD =
   process.env.DEFAULT_PAYMENT_METHOD || "PayPal";
