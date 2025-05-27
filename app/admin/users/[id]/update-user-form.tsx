@@ -127,6 +127,7 @@ const UpdateUserForm = ({
                 <Select
                   onValueChange={field.onChange}
                   value={field.value.toString()}
+                  disabled={field.value === "root"}
                 >
                   <FormControl>
                     <SelectTrigger>
@@ -134,11 +135,13 @@ const UpdateUserForm = ({
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {USER_ROLES.map((role) => (
-                      <SelectItem key={role} value={role}>
-                        {role.charAt(0).toUpperCase() + role.slice(1)}
-                      </SelectItem>
-                    ))}
+                    {USER_ROLES.filter((role) => role !== "root").map(
+                      (role) => (
+                        <SelectItem key={role} value={role}>
+                          {role.charAt(0).toUpperCase() + role.slice(1)}
+                        </SelectItem>
+                      )
+                    )}
                   </SelectContent>
                 </Select>
                 <FormMessage />

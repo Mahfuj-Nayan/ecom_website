@@ -199,8 +199,11 @@ export async function deleteUser(userId: string) {
     if (!user) throw new Error("User not found");
 
     // Prevent deleting the current user
-    if (user.id === session.user.id) {
-      throw new Error("You cannot delete your own account");
+    // if (user.id === session.user.id) {
+    //   throw new Error("You cannot delete your own account");
+    // }
+    if (user.role === "root") {
+      throw new Error("You cannot delete a root user");
     }
     await prisma.user.delete({
       where: { id: userId },

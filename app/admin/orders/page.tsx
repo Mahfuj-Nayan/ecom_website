@@ -29,7 +29,7 @@ const AdminOrdersPage = async (props: {
 
   const session = await auth();
 
-  if (session?.user?.role !== "admin") {
+  if (session?.user?.role !== "admin" && session?.user?.role !== "root") {
     throw new Error("Unauthorized access");
   }
 
