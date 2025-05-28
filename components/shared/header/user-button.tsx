@@ -62,14 +62,14 @@ const UserButton = async () => {
               Order History
             </Link>
           </DropdownMenuItem>
-          {session?.user?.role === "admin" ||
-            (session?.user?.role === "root" && (
-              <DropdownMenuItem>
-                <Link href="/admin/overview" className="w-full font-medium">
-                  Admin Area
-                </Link>
-              </DropdownMenuItem>
-            ))}
+          {(session?.user?.role === "admin" ||
+            session?.user?.role === "root") && (
+            <DropdownMenuItem>
+              <Link href="/admin/overview" className="w-full font-medium">
+                Admin Area
+              </Link>
+            </DropdownMenuItem>
+          )}
 
           <DropdownMenuItem className="p-0 mb-1">
             <form action={signOutUser} className="w-full">

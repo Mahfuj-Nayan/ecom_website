@@ -88,7 +88,7 @@ const OrderDetailsTable = ({
     return (
       <Button
         type="button"
-        disabled={isPending}
+        disabled={isPending || !isAdmin}
         onClick={() =>
           startTransition(async () => {
             const res = await updateOrderToPaidCOD(order.id);
@@ -113,7 +113,7 @@ const OrderDetailsTable = ({
     return (
       <Button
         type="button"
-        disabled={isPending}
+        disabled={isPending || !isAdmin}
         onClick={() =>
           startTransition(async () => {
             const res = await deliveredOrder(order.id);

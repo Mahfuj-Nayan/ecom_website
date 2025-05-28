@@ -118,3 +118,22 @@ export async function deleteProduct(id: string) {
     return { success: false, message: formatError(error) };
   }
 }
+
+// Get all categories
+export async function getAllCategories() {
+  const data = await prisma.product.groupBy({
+    by: ["category"],
+    _count: true,
+  });
+  return data;
+}
+
+// Get featured products
+export async function getFeaturedProducts() {
+  const data = await prisma.product.findMany({
+    where: { isFeatured: true },
+    orderBy: { createdAt: "desc" },
+    take: 6,
+  });
+  return convertPrismaToPlainObject(data);
+}

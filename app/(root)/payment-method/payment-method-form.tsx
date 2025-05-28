@@ -42,7 +42,7 @@ const PaymentMethodForm = ({
       const res = await updateUserPaymentMethod(values);
 
       if (!res.success) {
-        toast.error(res.message, { richColors: true });
+        toast.error(res.message);
         return;
       }
       router.push("/place-order");
