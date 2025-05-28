@@ -219,6 +219,17 @@ export async function deleteUser(userId: string) {
 // Update a user (admin action)
 export async function updateUser(user: z.infer<typeof updateUserSchema>) {
   try {
+    const session = await auth();
+    const currentUser = await prisma.user.findFirst({
+      where: { id: session?.user?.id },
+    });
+    if (currentUser?.role !== "root") {
+      return {
+        success: false,
+        message: "Only root user can change role",
+      };
+    }
+
     await prisma.user.update({
       where: { id: user.id },
       data: {
