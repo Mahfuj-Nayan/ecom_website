@@ -15,7 +15,7 @@ export default function PriceFilter() {
   const handleFilter = () => {
     const params = new URLSearchParams(searchParams.toString());
     const minVal = min !== "" ? min : "0";
-    const maxVal = max !== "" ? max : ""; // empty string will imply no upper bound
+    const maxVal = max !== "" ? max : "10000"; // empty string will imply no upper bound
 
     if (min !== "" || max !== "") {
       params.set("price", `${minVal}-${maxVal}`);
