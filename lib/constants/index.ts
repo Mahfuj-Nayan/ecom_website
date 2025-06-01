@@ -57,3 +57,9 @@ export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
   : ["PayPal", "Stripe", "CashOnDelivery"];
 export const DEFAULT_PAYMENT_METHOD =
   process.env.DEFAULT_PAYMENT_METHOD || "PayPal";
+
+export const reviewFormDefaultValues = {
+  title: "",
+  comment: "",
+  rating: 0,
+};
